@@ -1,5 +1,6 @@
 require('plugins.packer')
 require('plugins.emmet')
-require('plugins.indent-blankline')
+-- require('plugins.indent-blankline')
+require('plugins.nvim-autopairs')
 require('plugins.delimitMate')
 require('plugins.nvim-lspconfig')

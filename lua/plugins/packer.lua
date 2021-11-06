@@ -8,7 +8,8 @@ return require('packer').startup(function()
 
   -- completion
   use 'mattn/emmet-vim'
-  use 'Raimondi/delimitMate'
+  -- use 'Raimondi/delimitMate'
+  use 'windwp/nvim-autopairs'
 
   -- interface
   use 'lukas-reineke/indent-blankline.nvim'
@@ -26,4 +27,5 @@ return require('packer').startup(function()
 
   -- lsp and completion
   use 'neovim/nvim-lspconfig'
+  use 'L3MON4D3/LuaSnip'
 end)
