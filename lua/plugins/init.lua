@@ -1,3 +1,4 @@
 require('plugins.packer')
 require('plugins.emmet')
-require('plugins.indent')
+require('plugins.indent-blankline')
+require('plugins.delimitMate')
