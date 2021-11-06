@@ -23,4 +23,7 @@ return require('packer').startup(function()
   -- color
   use 'cocopon/iceberg.vim'
   use 'arcticicestudio/nord-vim'
+
+  -- lsp and completion
+  use 'neovim/nvim-lspconfig'
 end)
