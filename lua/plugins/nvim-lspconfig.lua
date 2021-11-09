@@ -53,3 +53,8 @@ require'lspconfig'.html.setup {
 }
 
 require'lspconfig'.tsserver.setup{}
+
+require'lspconfig'.cssls.setup {
+  capabilities = capabilities,
+}
+

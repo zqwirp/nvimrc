@@ -6,8 +6,9 @@ local opt = vim.opt
 local cmd = vim.cmd
 
 opt.number = true
-cmd 'colorscheme iceberg'
+cmd 'colorscheme nord'
 opt.background = 'dark'
+opt.cursorline = true
 
 opt.wrap = false
 opt.wildmode = {'list', 'longest'}
@@ -26,7 +27,8 @@ opt.backup = false
 opt.swapfile = false
 opt.writebackup = false
 
--- opt.termguicolors = true
+opt.termguicolors = true
+
 -- default
 -- nocompatible
 -- encoding = utf-8
