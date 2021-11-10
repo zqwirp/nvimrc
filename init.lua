@@ -8,6 +8,7 @@ local cmd = vim.cmd
 opt.number = true
 cmd 'colorscheme nord'
 opt.background = 'dark'
+opt.termguicolors = true
 opt.cursorline = true
 
 opt.wrap = false
@@ -27,10 +28,3 @@ opt.backup = false
 opt.swapfile = false
 opt.writebackup = false
 
-opt.termguicolors = true
-
--- default
--- nocompatible
--- encoding = utf-8
--- smarttab
--- autoindent
