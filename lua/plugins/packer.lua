@@ -18,11 +18,11 @@ return require('packer').startup(function()
 
   -- completion
   use 'mattn/emmet-vim'
-  -- use 'Raimondi/delimitMate'
   use 'windwp/nvim-autopairs'
 
   -- syntax
-  use 'sheerun/vim-polyglot' -- a collection of language packs for vim
+  -- use 'sheerun/vim-polyglot' -- a collection of language packs for vim
+  use 'nvim-treesitter/nvim-treesitter'
   use 'prettier/vim-prettier'
 
   -- integration
@@ -35,10 +35,11 @@ return require('packer').startup(function()
   use 'lukas-reineke/indent-blankline.nvim'
   use {'lewis6991/gitsigns.nvim',
     requires = {'nvim-lua/plenary.nvim'},
-  }  -- like gitgutter
+  }  -- plugin like gitgutter written with lua
 
   -- color
   use 'cocopon/iceberg.vim'
   use 'arcticicestudio/nord-vim'
+  use 'nanotech/jellybeans.vim'
 
 end)
