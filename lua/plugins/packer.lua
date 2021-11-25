@@ -21,7 +21,8 @@ return require('packer').startup(function()
   use 'windwp/nvim-autopairs'
 
   -- syntax
-  -- use 'sheerun/vim-polyglot' -- a collection of language packs for vim
+  use 'sheerun/vim-polyglot' -- a collection of language packs for vim
+  use 'pangloss/vim-javascript'
   use 'nvim-treesitter/nvim-treesitter'
   use 'prettier/vim-prettier'
 
@@ -36,6 +37,7 @@ return require('packer').startup(function()
   use {'lewis6991/gitsigns.nvim',
     requires = {'nvim-lua/plenary.nvim'},
   }  -- plugin like gitgutter written with lua
+  use 'ojroques/nvim-hardline'
 
   -- color
   use 'cocopon/iceberg.vim'

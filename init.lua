@@ -9,7 +9,7 @@ opt.number = true
 opt.hidden = true
 opt.cursorline = true
 
-cmd 'colorscheme iceberg'
+cmd 'colorscheme jellybeans'
 opt.background = 'dark'
 opt.termguicolors = true
 

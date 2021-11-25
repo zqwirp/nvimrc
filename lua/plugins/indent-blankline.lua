@@ -5,5 +5,7 @@ require("indent_blankline").setup {
   filetype = { "html", "javascript", "scss", "php" },
   buftype_exclude = {"terminal"},
   show_end_of_line = true,
+  show_current_context = true,
+  show_current_context_start = true,
 }
 

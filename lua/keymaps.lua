@@ -27,3 +27,5 @@ map('i', '<end>', '<nop>', { noremap = true })
 map('i', '<s-up>', '<nop>', { noremap = true })
 map('i', '<s-down>', '<nop>', { noremap = true })
 map('i', '<c-l>', '<delete>', { noremap = true })
+
+map('n', '<F9>', ':NvimTreeToggle<cr>', { noremap = true })
