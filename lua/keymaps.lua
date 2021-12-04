@@ -6,6 +6,7 @@ map('n', '<leader>n', ':bnext<cr>', { noremap = true })
 map('n', '<leader>b', ':bprev<cr>', { noremap = true })
 map('n', '<leader><esc>', ':noh<cr>', { noremap = true })
 
+-- Hard mode
 map('n', '<up>', '<nop>', { noremap = true })
 map('n', '<down>', '<nop>', { noremap = true })
 map('n', '<left>', '<nop>', { noremap = true })
@@ -28,4 +29,10 @@ map('i', '<s-up>', '<nop>', { noremap = true })
 map('i', '<s-down>', '<nop>', { noremap = true })
 map('i', '<c-l>', '<delete>', { noremap = true })
 
-map('n', '<F9>', ':NvimTreeToggle<cr>', { noremap = true })
+-- Nvimtree keymaps
+map('n', '<F9>', ':NvimTreeToggle<cr>', { noremap = true, silent = true })
+
+-- Telescope keymaps
+map('n', '<leader>ff', ':Telescope find_files<cr>', { noremap = true, silent = true })
+map('n', '<leader>fg', ':Telescope live_grep<cr>', { noremap = true, silent = true })
+map('n', '<leader>fb', ':Telescope buffers<cr>', { noremap = true, silent = true })

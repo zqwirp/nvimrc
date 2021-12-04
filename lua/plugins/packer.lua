@@ -19,6 +19,7 @@ return require('packer').startup(function()
   -- completion
   use 'mattn/emmet-vim'
   use 'windwp/nvim-autopairs'
+  use 'honza/vim-snippets'
 
   -- syntax
   use 'sheerun/vim-polyglot' -- a collection of language packs for vim
@@ -27,21 +28,15 @@ return require('packer').startup(function()
   use 'prettier/vim-prettier'
 
   -- integration
-  use {'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons',
-    config = function() require'nvim-tree'.setup {} end
-  }
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
-  }
+  use 'kyazdani42/nvim-tree.lua'
+  use 'nvim-telescope/telescope.nvim'
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  use 'nvim-lua/plenary.nvim' -- required by nvim-telescope, gitsigns
 
   -- interface
   use 'lukas-reineke/indent-blankline.nvim'
-  use {'lewis6991/gitsigns.nvim',
-    requires = {'nvim-lua/plenary.nvim'},
-  }  -- plugin like gitgutter written with lua
-  use 'ojroques/nvim-hardline'
+  use 'lewis6991/gitsigns.nvim' -- plugin like gitgutter
+  use 'kyazdani42/nvim-web-devicons' -- required by nvim-tree
 
   -- color
   use 'cocopon/iceberg.vim'
