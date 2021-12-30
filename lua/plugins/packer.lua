@@ -19,7 +19,6 @@ return require('packer').startup(function()
   -- completion
   use 'mattn/emmet-vim'
   use 'windwp/nvim-autopairs'
-  use 'honza/vim-snippets'
 
   -- syntax
   use 'sheerun/vim-polyglot' -- a collection of language packs for vim
@@ -28,7 +27,7 @@ return require('packer').startup(function()
   use 'prettier/vim-prettier'
 
   -- integration
-  use 'kyazdani42/nvim-tree.lua'
+  use {'kyazdani42/nvim-tree.lua', config = function() require'nvim-tree'.setup {} end}
   use 'nvim-telescope/telescope.nvim'
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use 'nvim-lua/plenary.nvim' -- required by nvim-telescope, gitsigns

@@ -1,8 +1,10 @@
 require('plugins.packer')
 require('plugins.nvim-lspconfig')
 require('plugins.nvim-cmp')
-require('plugins.emmet')
+require('plugins.nvim-autopairs')
 require('plugins.indent-blankline')
+require('plugins.luasnip')
+require('plugins.emmet')
 require('plugins.prettier')
 
 require('telescope').load_extension('fzf')

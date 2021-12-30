@@ -3,7 +3,7 @@ vim.g.mapleader = ' '
 
 map('n', '<Space>', '', {})
 map('n', '<leader>n', ':bnext<cr>', { noremap = true })
-map('n', '<leader>b', ':bprev<cr>', { noremap = true })
+map('n', '<leader>b', ':buffers<cr>', { noremap = true })
 map('n', '<leader><esc>', ':noh<cr>', { noremap = true })
 
 -- Hard mode

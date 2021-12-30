@@ -1,12 +1,12 @@
-require('plugins')
-require('keymaps')
+require'plugins'
+require'keymaps'
+-- require'snippets'
 
 local g = vim.g
 local opt = vim.opt
 local cmd = vim.cmd
 
 opt.number = true
-opt.hidden = true
 opt.cursorline = true
 
 cmd 'colorscheme jellybeans'
