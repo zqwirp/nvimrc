@@ -18,6 +18,8 @@ opt.shiftround = true
 opt.splitright = true
 opt.splitbelow = true
 opt.smartindent = true
+opt.autoindent = true
+opt.smarttab = true
 
 opt.backup = false
 opt.swapfile = false

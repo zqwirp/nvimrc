@@ -44,7 +44,3 @@ return require('packer').startup(function()
 
   use 'nvim-lua/plenary.nvim' -- required by nvim-telescope
 end)
-
-
-
--- use 'lewis6991/gitsigns.nvim' -- plugin like gitgutter
