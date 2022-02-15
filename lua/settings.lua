@@ -31,6 +31,3 @@ opt.smartcase = true
 opt.backup = false
 opt.swapfile = false
 opt.writebackup = false
-
--- Required Settings for Plugins
-opt.completeopt = {'menuone', 'noinsert', 'noselect'}
