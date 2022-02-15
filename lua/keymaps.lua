@@ -1,0 +1,28 @@
+local map = vim.api.nvim_set_keymap
+
+map('n', '<leader>n', ':bnext<cr>', { noremap = true })
+map('n', '<leader>b', ':bprev<cr>', { noremap = true })
+map('n', '<leader><esc>', ':noh<cr>', { noremap = true })
+
+-- Hard mode
+map('n', '<up>', '<nop>', { noremap = true })
+map('n', '<down>', '<nop>', { noremap = true })
+map('n', '<left>', '<nop>', { noremap = true })
+map('n', '<right>', '<nop>', { noremap = true })
+map('n', '<home>', '<nop>', { noremap = true })
+map('n', '<pageup>', '<nop>', { noremap = true })
+map('n', '<pagedown>', '<nop>', { noremap = true })
+map('n', '<end>', '<nop>', { noremap = true })
+map('n', '<s-up>', '<nop>', { noremap = true })
+map('n', '<s-down>', '<nop>', { noremap = true })
+map('i', '<up>', '<nop>', { noremap = true })
+map('i', '<down>', '<nop>', { noremap = true })
+map('i', '<left>', '<nop>', { noremap = true })
+map('i', '<right>', '<nop>', { noremap = true })
+map('i', '<home>', '<nop>', { noremap = true })
+map('i', '<pageup>', '<nop>', { noremap = true })
+map('i', '<pagedown>', '<nop>', { noremap = true })
+map('i', '<end>', '<nop>', { noremap = true })
+map('i', '<s-up>', '<nop>', { noremap = true })
+map('i', '<s-down>', '<nop>', { noremap = true })
+-- map('i', '<c-l>', '<delete>', { noremap = true })
