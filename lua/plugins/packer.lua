@@ -1,4 +1,4 @@
-require('packer').startup(function()
+return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
   -- lsp & completion
