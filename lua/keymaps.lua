@@ -3,6 +3,7 @@ local map = vim.api.nvim_set_keymap
 map('n', '<leader>n', ':bnext<cr>', { noremap = true })
 map('n', '<leader>b', ':bprev<cr>', { noremap = true })
 map('n', '<leader><esc>', ':noh<cr>', { noremap = true })
+map('n', '<leader>w', ':%s/\\s\\+$//e<cr>', { noremap = true })
 
 -- Hard mode
 map('n', '<up>', '<nop>', { noremap = true })
