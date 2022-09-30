@@ -1,7 +1,11 @@
-return require('packer').startup(function()
+return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
+  use 'nvim-lua/plenary.nvim' -- required by gitsigns and telescope
+  use {
+    'kyazdani42/nvim-web-devicons', -- optional, for file nvim-tree icons
+    config = function() require('nvim-tree').setup {} end
+  }
 
-  -- lsp & completion
   use 'neovim/nvim-lspconfig'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
@@ -11,40 +15,39 @@ return require('packer').startup(function()
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
 
-  -- completion
-  use {'windwp/nvim-autopairs',
-    config = function() require'nvim-autopairs'.setup {} end
-  }
-  use 'mattn/emmet-vim'
-
-  -- syntax
-  use 'sheerun/vim-polyglot'
-  use 'tpope/vim-haml'
-  use 'pangloss/vim-javascript'
-  use 'prettier/vim-prettier'
-
-  -- integration
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-  use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'},
-    config = function()
-      require('gitsigns').setup()
-    end
-  }
+  use 'tpope/vim-surround'
   use 'tpope/vim-fugitive'
-  use {'kyazdani42/nvim-tree.lua', requires = {'kyazdani42/nvim-web-devicons'},
-    config = function() require'nvim-tree'.setup {} end -- initialize
-  }
-  use { 'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim'} }
+  use 'tpope/vim-commentary'
+
+  use 'nvim-telescope/telescope.nvim'
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
-  -- interface
+  use 'nvim-treesitter/nvim-treesitter'
+  use {
+    'windwp/nvim-autopairs',
+    config = function() require('nvim-autopairs').setup {} end
+  }
   use 'lukas-reineke/indent-blankline.nvim'
+  use {
+    'kyazdani42/nvim-tree.lua',
+    tag = 'nightly', -- optional, updated every week. (see issue #1193)
+    config = function() require('nvim-tree').setup {} end
+  }
 
-  -- command
-  use 'tpope/vim-commentary'
-  use 'tpope/vim-surround'
+  use 'prettier/vim-prettier'
 
-  -- color
+  -- use 'fatih/vim-go'
+  use {
+    'ray-x/go.nvim',
+    config = function() require('go').setup {} end
+  }
+
+  use {
+    'lewis6991/gitsigns.nvim', 
+    config = function() require('gitsigns').setup() end
+  }
+
+  -- Colors
   use 'cocopon/iceberg.vim'
   use 'arcticicestudio/nord-vim'
   use 'nanotech/jellybeans.vim'

@@ -1,12 +1,16 @@
 local opt = vim.opt
 
+vim.api.nvim_set_keymap('n', '<Space>', '', {})
+vim.g.mapleader = ' '
+
 opt.encoding = 'utf-8'
 opt.number = true
 opt.cursorline = true
 opt.wrap = false
 opt.wildmenu = true
-opt.wildmode = {'list', 'longest'}
-opt.backspace = {'indent', 'eol', 'start'}
+opt.wildmode = 'list,longest'
+opt.backspace = 'indent,eol,start'
+opt.completeopt = 'menu,menuone,noselect'
 
 vim.cmd 'colorscheme jellybeans'
 opt.background = 'dark'
