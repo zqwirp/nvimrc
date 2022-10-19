@@ -15,6 +15,8 @@ return require('packer').startup(function(use)
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
 
+  use 'honza/vim-snippets'
+
   use 'tpope/vim-surround'
   use 'tpope/vim-fugitive'
   use 'tpope/vim-commentary'
