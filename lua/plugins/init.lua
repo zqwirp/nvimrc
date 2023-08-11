@@ -1,2 +1,3 @@
 require("plugins.lazy")
--- require("plugins.nvim-treesitter")
+require("plugins.treesitter")
+require("plugins.lsp")

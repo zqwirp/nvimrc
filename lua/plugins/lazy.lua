@@ -17,5 +17,27 @@ require("lazy").setup({
   "tpope/vim-fugitive",
   "tpope/vim-commentary",
 
+  "honza/vim-snippets",
+
   "nanotech/jellybeans.vim",
+
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    opts = {} -- this is equalent to setup({}) function
+  },
+
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+  },
+
+  "neovim/nvim-lspconfig",
+  "hrsh7th/cmp-nvim-lsp",
+  "hrsh7th/cmp-buffer",
+  "hrsh7th/cmp-path",
+  "hrsh7th/cmp-cmdline",
+  "hrsh7th/nvim-cmp",
+  "L3MON4D3/LuaSnip",
+  "saadparwaiz1/cmp_luasnip",
 })

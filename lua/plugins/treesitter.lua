@@ -6,6 +6,7 @@ require("nvim-treesitter.configs").setup({
     "c", "cpp", "go", "dockerfile",
     "python", "rust",
   },
+  sync_install = false,
   auto_install = false,
   -- modules
   highlight = { enable = true },
