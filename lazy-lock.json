@@ -1,0 +1,7 @@
+{
+  "jellybeans.vim": { "branch": "master", "commit": "ef83bf4dc8b3eacffc97bf5c96ab2581b415c9fa" },
+  "lazy.nvim": { "branch": "main", "commit": "dac844ed617dda4f9ec85eb88e9629ad2add5e05" },
+  "vim-commentary": { "branch": "master", "commit": "e87cd90dc09c2a203e13af9704bd0ef79303d755" },
+  "vim-fugitive": { "branch": "master", "commit": "b3b838d690f315a503ec4af8c634bdff3b200aaf" },
+  "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" }
+}
