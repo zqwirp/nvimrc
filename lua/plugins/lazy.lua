@@ -17,9 +17,15 @@ require("lazy").setup({
   "tpope/vim-fugitive",
   "tpope/vim-commentary",
 
-  "honza/vim-snippets",
+	"honza/vim-snippets",
+	{
+    "prettier/vim-prettier",
+    ft = { "html", "css", "javascript" }
+  },
 
   "nanotech/jellybeans.vim",
+  "sainnhe/everforest",
+  "joshdick/onedark.vim",
 
   {
     "windwp/nvim-autopairs",

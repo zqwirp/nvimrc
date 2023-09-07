@@ -15,7 +15,7 @@ opt.completeopt = "menu,menuone,noselect"
 opt.splitright = true
 
 opt.background = "dark"
-vim.cmd("colorscheme jellybeans")
+vim.cmd("colorscheme everforest")
 opt.termguicolors = true
 
 opt.tabstop = 2

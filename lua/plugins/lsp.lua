@@ -1,5 +1,6 @@
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
+vim.lsp.set_log_level("debug")
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
@@ -97,29 +98,43 @@ local lspconfig = require("lspconfig")
 lspconfig.tsserver.setup({
   capabilities = capabilities
 })
+lspconfig.eslint.setup({
+  capabilities = capabilities,
+  on_attach = function(client, bufnr)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      command = "EslintFixAll",
+    })
+  end,
+})
 lspconfig.lua_ls.setup({
+  capabilities = capabilities,
   on_init = function(client)
     local path = client.workspace_folders[1].name
     if not vim.loop.fs_stat(path..'/.luarc.json') and not vim.loop.fs_stat(path..'/.luarc.jsonc') then
-      client.config.settings = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+      client.config.settings = vim.tbl_deep_extend('force', client.config.settings, {
         Lua = {
-          diagnostics = {
-            -- Get the language server to recognize the `vim` global
-            globals = {'vim'},
+          runtime = {
+            -- Tell the language server which version of Lua you're using
+            -- (most likely LuaJIT in the case of Neovim)
+            version = 'LuaJIT'
           },
-        },
-        runtime = {
-          -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
-          version = 'LuaJIT'
-        },
-        -- Make the server aware of Neovim runtime files
-        workspace = {
-          library = { vim.env.VIMRUNTIME }
-          -- or pull in all of 'runtimepath'. NOTE: this is a lot slower
-          -- library = vim.api.nvim_get_runtime_file("", true)
+          -- Make the server aware of Neovim runtime files
+          workspace = {
+            checkThirdParty = false,
+            library = {
+              vim.env.VIMRUNTIME
+              -- "${3rd}/luv/library"
+              -- "${3rd}/busted/library",
+            }
+            -- or pull in all of 'runtimepath'. NOTE: this is a lot slower
+            -- library = vim.api.nvim_get_runtime_file("", true)
+          },
+          diagnostics = {
+            globals = { "vim" }, -- Get the language server to recognize the `vim` global
+          },
         }
       })
-
       client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
     end
     return true
