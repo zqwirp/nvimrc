@@ -1,4 +1,5 @@
 -- "lazy" nvim plugin manager bootstrap
+-- or                              , branch = '0.1.x',
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -13,19 +14,47 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  "nvim-lua/plenary.nvim",
+
   "tpope/vim-surround",
   "tpope/vim-fugitive",
   "tpope/vim-commentary",
 
-	"honza/vim-snippets",
-	{
+  "honza/vim-snippets",
+  {
     "prettier/vim-prettier",
     ft = { "html", "css", "javascript" }
   },
 
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+      renderer = {
+        icons = {
+          show = {
+            file = false,
+            folder = false,
+          }
+        }
+      }
+    }
+  },
+
+  {
+    "nvim-telescope/telescope.nvim", tag = "0.1.3",
+    dependencies = { "nvim-lua/plenary.nvim" }
+  },
+  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+
   "nanotech/jellybeans.vim",
   "sainnhe/everforest",
   "joshdick/onedark.vim",
+  "rebelot/kanagawa.nvim",
+
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = {}
+  },
 
   {
     "windwp/nvim-autopairs",

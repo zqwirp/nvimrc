@@ -1,6 +1,9 @@
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-vim.lsp.set_log_level("debug")
+
+-- Turn on only for debugging
+-- vim.lsp.set_log_level("debug")
+
 vim.keymap.set("n", "<space>e", vim.diagnostic.open_float)
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
@@ -98,6 +101,9 @@ local lspconfig = require("lspconfig")
 lspconfig.tsserver.setup({
   capabilities = capabilities
 })
+lspconfig.pyright.setup{
+  capabilities = capabilities
+}
 lspconfig.eslint.setup({
   capabilities = capabilities,
   on_attach = function(client, bufnr)

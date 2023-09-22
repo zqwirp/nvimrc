@@ -1,5 +1,13 @@
 local opt = vim.opt
 
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_node_provider = 0
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 opt.encoding = "utf-8"
 opt.number = true
 opt.cursorline = true
@@ -15,7 +23,7 @@ opt.completeopt = "menu,menuone,noselect"
 opt.splitright = true
 
 opt.background = "dark"
-vim.cmd("colorscheme everforest")
+vim.cmd("colorscheme kanagawa-dragon")
 opt.termguicolors = true
 
 opt.tabstop = 2
