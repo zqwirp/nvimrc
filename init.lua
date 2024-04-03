@@ -1,4 +1,15 @@
+-- INITIAL CONFIGURATION
+
+-- LOAD MODULES
 require("plugins")
-require("keymaps")
 require("settings")
-require("snippets")
+require("keymaps")
+
+vim.api.nvim_command([[
+    function! FormatC()
+        silent execute '!clang-format -i --style=file ' . expand('%')
+        edit
+    endfunction
+]])
+
+vim.api.nvim_command(":command! FormatC call FormatC()")

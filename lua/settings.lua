@@ -1,47 +1,56 @@
 local opt = vim.opt
 
-vim.g.loaded_ruby_provider = 0
-vim.g.loaded_perl_provider = 0
-vim.g.loaded_python3_provider = 0
-vim.g.loaded_node_provider = 0
-
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
+-- GENERAL
 opt.encoding = "utf-8"
-opt.number = true
-opt.cursorline = true
+opt.compatible = false
+
 opt.wrap = false
+opt.number = true
+-- opt.numberwidth = 1
+-- opt.relativenumber = true
 
 opt.backspace = "indent,eol,start"
+opt.completeopt = "menu,menuone,noselect"
 
+opt.showcmd = true
+opt.showmode = true
+opt.showmatch = true
+
+-- WILDMENU
 opt.wildmenu = true
 opt.wildmode = "list,longest"
 
-opt.completeopt = "menu,menuone,noselect"
-
-opt.splitright = true
-
+-- COLOR/THEME
 opt.background = "dark"
-vim.cmd("colorscheme kanagawa-dragon")
+vim.cmd("colorscheme catppuccin-mocha")
 opt.termguicolors = true
 
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.softtabstop = 2
-opt.expandtab = true
+-- SPACE/TAB/INDENT
+-- opt.tabstop = 2
+-- opt.shiftwidth = 2
+-- opt.softtabstop = 2
+-- opt.expandtab = true
 opt.shiftround = true
-opt.splitright = true
-opt.splitbelow = true
 opt.smartindent = true
 opt.autoindent = true
 opt.smarttab = true
 
+-- WINDOW
+opt.splitright = true
+opt.splitbelow = true
+
+-- SEARCH
 opt.hlsearch = true
 opt.incsearch = true
 opt.ignorecase = true
 opt.smartcase = true
 
+-- BACKUP
 opt.backup = false
 opt.swapfile = false
 opt.writebackup = false
+-- opt.backupdir = vim.fn.stdpath("data") .. "/backup"
+
+-- CURSOR
+opt.cursorline = true
+-- opt.cursorcolumn = true
