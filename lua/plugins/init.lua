@@ -118,7 +118,7 @@ require("lazy").setup({
             require("nvim-tree").setup {}
         end,
 
-        cmd = "NvimTreeOpen",
+        cmd = "NvimTreeToggle",
     },
 
     -- AUTOPAIR [](){}
