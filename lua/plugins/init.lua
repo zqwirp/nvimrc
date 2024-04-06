@@ -94,6 +94,7 @@ require("lazy").setup({
         -- build = "make install_jsregexp", -- install jsregexp (optional!).
     },
 
+    -- NVIM CMP(COMPLETION)
     require("plugins.nvim-cmp"),
 
     -- LANGUAGE SERVER PROTOCOL
