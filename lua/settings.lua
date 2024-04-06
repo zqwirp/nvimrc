@@ -5,7 +5,7 @@ opt.encoding = "utf-8"
 opt.compatible = false
 
 opt.wrap = false
-opt.number = true
+opt.number = false
 -- opt.numberwidth = 1
 -- opt.relativenumber = true
 
@@ -22,7 +22,7 @@ opt.wildmode = "list,longest"
 
 -- COLOR/THEME
 opt.background = "dark"
-vim.cmd("colorscheme catppuccin-mocha")
+vim.cmd("colorscheme kanagawa-dragon")
 opt.termguicolors = true
 
 -- SPACE/TAB/INDENT

@@ -1,4 +1,6 @@
 -- INITIAL CONFIGURATION
+vim.g.loaded_netrw = 1 -- recommended for nvim-tree/nvim-tree.lua
+vim.g.loaded_netrwPlugin = 1 -- recommended for nvim-tree/nvim-tree.lua
 
 -- LOAD MODULES
 require("plugins")

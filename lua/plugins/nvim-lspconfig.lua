@@ -1,31 +1,49 @@
-local M = { "neovim/nvim-lspconfig" }
+local M = {
+    "neovim/nvim-lspconfig",
+    -- lazy = true,
+
+    cmd = "LspStart",
+}
 
 -- SUGGESTED CONFIGURATION https://github.com/neovim/nvim-lspconfig?tab=readme-ov-file#suggested-configuration
 M.config = function()
-    local capabilities = require("cmp_nvim_lsp").default_capabilities()
-    require("lspconfig").bashls.setup({
-        capabilities = capabilities
-    })
-    require("lspconfig").gopls.setup {
-        capabilities = capabilities
-    }
-    require("lspconfig").tsserver.setup({
-        capabilities = capabilities
-    })
-    require("lspconfig").html.setup({
-        capabilities = capabilities
-    })
-    require("lspconfig").cssls.setup({
-        capabilities = capabilities
-    })
-    require("lspconfig").intelephense.setup({
-        capabilities = capabilities
-    })
-    require("lspconfig").pyright.setup({
-        capabilities = capabilities
-    })
-    require("lspconfig").clangd.setup({
-        capabilities = capabilities
+    require("lspconfig").bashls.setup({})
+    require("lspconfig").gopls.setup {}
+    require("lspconfig").tsserver.setup({})
+    require("lspconfig").html.setup({})
+    require("lspconfig").cssls.setup({})
+    require("lspconfig").intelephense.setup({})
+    require("lspconfig").pyright.setup({})
+    require("lspconfig").clangd.setup({})
+    require("lspconfig").lua_ls.setup({
+        on_init = function(client)
+            local path = client.workspace_folders[1].name
+            if vim.loop.fs_stat(path .. '/.luarc.json') or vim.loop.fs_stat(path .. '/.luarc.jsonc') then
+                return
+            end
+
+            client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+                runtime = {
+                    -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+                    version = 'LuaJIT'
+                },
+                -- Make the server aware of Neovim runtime files
+                workspace = {
+                    checkThirdParty = false,
+                    library = {
+                        vim.env.VIMRUNTIME
+                        -- Depending on the usage, you might want to add additional paths here.
+                        -- "${3rd}/luv/library"
+                        -- "${3rd}/busted/library",
+                    }
+                    -- or pull in all of 'runtimepath'. NOTE: this is a lot slower
+                    -- library = vim.api.nvim_get_runtime_file("", true)
+                }
+            })
+        end,
+        settings = {
+            Lua = {}
+        }
     })
 
     vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)

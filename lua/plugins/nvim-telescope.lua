@@ -2,6 +2,8 @@ local M = {}
 
 M.telescope = {
     "nvim-telescope/telescope.nvim",
+    lazy = true,
+
     dependency = {
         "nvim-lua/plenary.nvim",
 
@@ -12,16 +14,27 @@ M.telescope = {
 
         "nvim-tree/nvim-web-devicons",
     },
+
     config = function()
         pcall(require('telescope').load_extension, 'fzf')
+
+        require('telescope').setup({
+            defaults = {
+                -- border = false,
+                layout_config = {
+                    height = 0.75
+                }
+            }
+        })
     end,
 }
 
 M["fzf-telescope"] = {
     "nvim-telescope/telescope-fzf-native.nvim",
+    lazy = true,
     
     build =
-    "make -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build"
+    "make -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
 }
 
 return M

@@ -1,5 +1,6 @@
 local M = {
     "hrsh7th/nvim-cmp",
+    lazy = true,
 
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
@@ -7,9 +8,13 @@ local M = {
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
         "saadparwaiz1/cmp_luasnip",
+
+        "L3MON4D3/LuaSnip",
+        "saadparwaiz1/cmp_luasnip",
     },
 
-    -- keys = { "n", "<leader>cm" }
+    -- cmd = "CmpStatus",
+    keys = { "n", "<leader>cm" },
 }
 
 local has_words_before = function()
@@ -43,8 +48,8 @@ M.config = function()
                     -- that way you will only jump inside the snippet region
                 elseif require("luasnip").expand_or_jumpable() then
                     require("luasnip").expand_or_jump()
-                -- elseif require("vim-snippets").jumpable(-1) then
-                --     require("vim-snippets").jump(-1)
+                    -- elseif require("vim-snippets").jumpable(-1) then
+                    --     require("vim-snippets").jump(-1)
                 elseif has_words_before() then
                     cmp.complete()
                 else
@@ -56,8 +61,8 @@ M.config = function()
                     cmp.select_prev_item()
                 elseif require("luasnip").jumpable(-1) then
                     require("luasnip").jump(-1)
-                -- elseif require("vim-snippets").jumpable(-1) then
-                --     require("vim-snippets").jump(-1)
+                    -- elseif require("vim-snippets").jumpable(-1) then
+                    --     require("vim-snippets").jump(-1)
                 else
                     fallback()
                 end
@@ -101,6 +106,36 @@ M.config = function()
             { name = "cmdline" }
         }),
         matching = { disallow_symbol_nonprefix_matching = false }
+    })
+
+    -- LSP CONFIGURATION
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+    require("lspconfig").bashls.setup({
+        capabilities = capabilities
+    })
+    require("lspconfig").gopls.setup {
+        capabilities = capabilities
+    }
+    require("lspconfig").tsserver.setup({
+        capabilities = capabilities
+    })
+    require("lspconfig").html.setup({
+        capabilities = capabilities
+    })
+    require("lspconfig").cssls.setup({
+        capabilities = capabilities
+    })
+    require("lspconfig").intelephense.setup({
+        capabilities = capabilities
+    })
+    require("lspconfig").pyright.setup({
+        capabilities = capabilities
+    })
+    require("lspconfig").clangd.setup({
+        capabilities = capabilities
+    })
+    require("lspconfig").lua_ls.setup({
+        capabilities = capabilities
     })
 end
 

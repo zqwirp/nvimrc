@@ -15,55 +15,76 @@ vim.opt.rtp:prepend(lazypath)
 -- INITIALIZE PLUGINS WITH MANAGER
 require("lazy").setup({
     -- REQUIRED
-    "nvim-lua/plenary.nvim",
+    {
+        "nvim-lua/plenary.nvim",
+        lazy = true,
+    },
 
-    "tpope/vim-surround",
-    "tpope/vim-commentary",
+    {
+        "tpope/vim-surround",
+        lazy = true,
+    },
+    {
+        "tpope/vim-commentary",
+        lazy = true,
+    },
 
     -- COLOR SCHEMES
-    {
-        "catppuccin/nvim",
-        name = "catppuccin",
-        priority = 1000
-    },
+    "rebelot/kanagawa.nvim",
+    -- {
+    --     "catppuccin/nvim",
+    --     name = "catppuccin",
+    --     priority = 1000
+    -- },
     -- {
     --     "folke/tokyonight.nvim",
     --     lazy = true,
     --     priority = 1000,
     --     opts = {},
     -- },
-    -- "rebelot/kanagawa.nvim",
 
     -- INDENT LINE
     {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
         opts = {},
-        keys = { "n", "<leader>be" }
+
+        -- keys = { "n", "<leader>be" },
+        cmd = "IBLEnable",
     },
 
     -- GIT INTEGRATION
     {
         "tpope/vim-fugitive", -- premier vim plugin for git
 
-        keys = { "n", "<leader>gp" },
+        cmd = "Git",
+        -- keys = { "n", "<leader>gp" },
     },
 
     -- GIT SIGNS
     {
         "lewis6991/gitsigns.nvim",
         opts = {},
+        dependencies = {
+            "tpope/vim-fugitive"
+        },
 
-        keys = { "n", "<leader>gp" },
+        cmd = "Git",
+        -- keys = { "n", "<leader>gp" },
     },
 
     -- COMPLETION
-    "honza/vim-snippets",
+    {
+        "honza/vim-snippets",
+        lazy = true,
+    },
     {
         "L3MON4D3/LuaSnip",
+        lazy = true,
         version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
         dependencies = {
             "saadparwaiz1/cmp_luasnip",
+            "honza/vim-snippets",
         },
 
         config = function()
@@ -84,6 +105,21 @@ require("lazy").setup({
     -- NVIM TELESCOPE
     require("plugins.nvim-telescope").telescope,
     require("plugins.nvim-telescope")["fzf-telescope"],
+
+    -- FILE MANAGER
+    {
+        "nvim-tree/nvim-tree.lua",
+        version = "*",
+        lazy = true,
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
+        config = function()
+            require("nvim-tree").setup {}
+        end,
+
+        cmd = "NvimTreeOpen",
+    },
 
     -- AUTOPAIR [](){}
     {
@@ -109,7 +145,7 @@ require("lazy").setup({
 
         ft = { "go", "gomod" },
         -- event = "CmdlineEnter",
-        cmd = "GoFmt",
+        -- cmd = "GoFmt",
     },
 
     -- HTML, CSS, JS
@@ -118,5 +154,8 @@ require("lazy").setup({
         cmd = "Prettier",
     },
 
-    "nvim-tree/nvim-web-devicons",
+    {
+        "nvim-tree/nvim-web-devicons",
+        lazy = true,
+    }
 })
