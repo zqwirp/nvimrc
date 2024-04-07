@@ -1,11 +1,13 @@
 -- INITIAL CONFIGURATION
-vim.g.loaded_netrw = 1 -- recommended for nvim-tree/nvim-tree.lua
+vim.g.loaded_netrw = 1       -- recommended for nvim-tree/nvim-tree.lua
 vim.g.loaded_netrwPlugin = 1 -- recommended for nvim-tree/nvim-tree.lua
 
 -- LOAD MODULES
 require("plugins")
 require("settings")
 require("keymaps")
+
+vim.cmd('cabbrev vsb vert sb')
 
 vim.api.nvim_command([[
     function! FormatC()

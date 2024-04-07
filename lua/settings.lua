@@ -6,7 +6,7 @@ opt.compatible = false
 
 opt.wrap = false
 opt.number = false
--- opt.numberwidth = 1
+opt.numberwidth = 1
 -- opt.relativenumber = true
 
 opt.backspace = "indent,eol,start"

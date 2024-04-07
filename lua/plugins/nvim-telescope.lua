@@ -32,7 +32,7 @@ M.telescope = {
 M["fzf-telescope"] = {
     "nvim-telescope/telescope-fzf-native.nvim",
     lazy = true,
-    
+
     build =
     "make -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
 }
