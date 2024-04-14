@@ -12,6 +12,15 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+local lazy_opt = {
+    install = {
+        -- install missing plugins on startup. This doesn't increase startup time.
+        missing = true,
+        -- try to load one of these colorschemes when starting an installation during startup
+        colorscheme = nil,
+    },
+}
+
 -- INITIALIZE PLUGINS WITH MANAGER
 require("lazy").setup({
     -- REQUIRED
@@ -22,26 +31,42 @@ require("lazy").setup({
 
     {
         "tpope/vim-surround",
-        lazy = true,
+        -- lazy = true,
+
+        event = "InsertEnter",
     },
     {
         "tpope/vim-commentary",
-        lazy = true,
+        -- lazy = true,
     },
 
     -- COLOR SCHEMES
-    "rebelot/kanagawa.nvim",
-    -- {
-    --     "catppuccin/nvim",
-    --     name = "catppuccin",
-    --     priority = 1000
-    -- },
-    -- {
-    --     "folke/tokyonight.nvim",
-    --     lazy = true,
-    --     priority = 1000,
-    --     opts = {},
-    -- },
+    {
+        "rebelot/kanagawa.nvim",
+        lazy = true,
+        priority = 1000,
+    },
+    {
+        "AlexvZyl/nordic.nvim",
+        lazy = true,
+        priority = 1000,
+        config = function()
+            require("nordic").load()
+        end
+    },
+    {
+        "catppuccin/nvim",
+        lazy = true,
+        name = "catppuccin",
+        priority = 1000
+    },
+    {
+        "folke/tokyonight.nvim",
+        lazy = true,
+        priority = 1000,
+        opts = {},
+    },
+    -- END OF COLOR SCHEMES
 
     -- INDENT LINE
     {
@@ -57,7 +82,7 @@ require("lazy").setup({
     {
         "tpope/vim-fugitive", -- premier vim plugin for git
 
-        cmd = "Git",
+        event = "CmdlineEnter",
         -- keys = { "n", "<leader>gp" },
     },
 
@@ -65,11 +90,8 @@ require("lazy").setup({
     {
         "lewis6991/gitsigns.nvim",
         opts = {},
-        dependencies = {
-            "tpope/vim-fugitive"
-        },
 
-        cmd = "Git",
+        -- cmd = "Git",
         -- keys = { "n", "<leader>gp" },
     },
 
@@ -116,7 +138,11 @@ require("lazy").setup({
             "nvim-tree/nvim-web-devicons",
         },
         config = function()
-            require("nvim-tree").setup {}
+            require("nvim-tree").setup({})
+
+            -- Disable netrw when plugin loaded
+            vim.g.loaded_netrw = 1
+            vim.g.loaded_netrwPlugin = 1
         end,
 
         cmd = "NvimTreeToggle",
@@ -152,11 +178,23 @@ require("lazy").setup({
     -- HTML, CSS, JS
     {
         "prettier/vim-prettier",
+        lazy = true,
+
         cmd = "Prettier",
     },
 
     {
         "nvim-tree/nvim-web-devicons",
         lazy = true,
-    }
-})
+    },
+
+    {
+        "dstein64/vim-startuptime",
+        -- lazy-load on a command
+        cmd = "StartupTime",
+        -- init is called during startup. Configuration for vim plugins typically should be set in an init function
+        init = function()
+            vim.g.startuptime_tries = 10
+        end,
+    },
+}, lazy_opt)

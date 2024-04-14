@@ -14,7 +14,7 @@ local M = {
     },
 
     -- cmd = "CmpStatus",
-    keys = { "n", "<leader>cm" },
+    keys = { "n", "<leader>cmp" },
 }
 
 local has_words_before = function()

@@ -18,13 +18,15 @@ M.opts = {
         "c", "go",
     },
     auto_install = true,
+
+    -- MODULES
     highlight = {
         enable = false,
     },
     incremental_selection = {
         enable = false,
     },
-    indent = { -- STILL EXPERIMENTAL FEATURE https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#indentation
+    indent = { -- Still experimental feature https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#indentation
         enable = false
     },
 }

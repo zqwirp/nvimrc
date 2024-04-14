@@ -22,7 +22,7 @@ opt.wildmode = "list,longest"
 
 -- COLOR/THEME
 opt.background = "dark"
-vim.cmd("colorscheme kanagawa-dragon")
+vim.cmd("colorscheme kanagawa")
 opt.termguicolors = true
 
 -- SPACE/TAB/INDENT

@@ -4,6 +4,8 @@ M.telescope = {
     "nvim-telescope/telescope.nvim",
     lazy = true,
 
+    tag = '0.1.6',
+
     dependency = {
         "nvim-lua/plenary.nvim",
 
@@ -15,17 +17,19 @@ M.telescope = {
         "nvim-tree/nvim-web-devicons",
     },
 
+    cmd = "Telescope",
+
     config = function()
         pcall(require('telescope').load_extension, 'fzf')
 
-        require('telescope').setup({
-            defaults = {
-                -- border = false,
-                layout_config = {
-                    height = 0.75
-                }
-            }
-        })
+        -- require('telescope').setup({
+        --     defaults = {
+        --         -- border = false,
+        --         layout_config = {
+        --             height = 0.75
+        --         }
+        --     }
+        -- })
     end,
 }
 

@@ -2,13 +2,13 @@ local M = {
     "neovim/nvim-lspconfig",
     -- lazy = true,
 
-    cmd = "LspInfo",
+    cmd = "LspStart",
 }
 
 -- SUGGESTED CONFIGURATION https://github.com/neovim/nvim-lspconfig?tab=readme-ov-file#suggested-configuration
 M.config = function()
     require("lspconfig").bashls.setup({})
-    require("lspconfig").gopls.setup {}
+    require("lspconfig").gopls.setup({})
     require("lspconfig").tsserver.setup({})
     require("lspconfig").html.setup({})
     require("lspconfig").cssls.setup({})
@@ -72,7 +72,7 @@ M.config = function()
             vim.keymap.set({ "n", "v" }, "<Space>ca", vim.lsp.buf.code_action, opts)
             vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
             vim.keymap.set("n", "<Space>f", function()
-                vim.lsp.buf.format { async = true }
+                vim.lsp.buf.format { async = false }
             end, opts)
         end,
     })
