@@ -18,11 +18,13 @@ opt.showmatch = true
 
 -- WILDMENU
 opt.wildmenu = true
-opt.wildmode = "list,longest"
+opt.wildoptions = ""
+opt.wildmode = "full"
+-- opt.wildmode = "list,longest"
 
 -- COLOR/THEME
 opt.background = "dark"
-vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme kanagawa-dragon")
 opt.termguicolors = true
 
 -- SPACE/TAB/INDENT

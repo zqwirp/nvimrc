@@ -33,7 +33,7 @@ require("lazy").setup({
         "tpope/vim-surround",
         -- lazy = true,
 
-        event = "InsertEnter",
+        -- event = "InsertEnter",
     },
     {
         "tpope/vim-commentary",
@@ -73,6 +73,7 @@ require("lazy").setup({
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
         opts = {},
+        lazy = true,
 
         -- keys = { "n", "<leader>be" },
         cmd = "IBLEnable",
@@ -81,6 +82,7 @@ require("lazy").setup({
     -- GIT INTEGRATION
     {
         "tpope/vim-fugitive", -- premier vim plugin for git
+        lazy = true,
 
         event = "CmdlineEnter",
         -- keys = { "n", "<leader>gp" },
@@ -126,10 +128,10 @@ require("lazy").setup({
     require("plugins.nvim-treesitter"),
 
     -- NVIM TELESCOPE
-    require("plugins.nvim-telescope").telescope,
     require("plugins.nvim-telescope")["fzf-telescope"],
+    require("plugins.nvim-telescope").telescope,
 
-    -- FILE MANAGER
+    -- NVIM TREE(FILE EXPLORER)
     {
         "nvim-tree/nvim-tree.lua",
         version = "*",
@@ -151,6 +153,8 @@ require("lazy").setup({
     -- AUTOPAIR [](){}
     {
         "windwp/nvim-autopairs",
+        lazy = true,
+        
         config = true,
 
         event = "InsertEnter",

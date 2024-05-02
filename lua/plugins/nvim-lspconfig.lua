@@ -1,6 +1,6 @@
 local M = {
     "neovim/nvim-lspconfig",
-    -- lazy = true,
+    lazy = true,
 
     cmd = "LspStart",
 }
@@ -10,11 +10,13 @@ M.config = function()
     require("lspconfig").bashls.setup({})
     require("lspconfig").gopls.setup({})
     require("lspconfig").tsserver.setup({})
+    require("lspconfig").eslint.setup({})
     require("lspconfig").html.setup({})
     require("lspconfig").cssls.setup({})
     require("lspconfig").intelephense.setup({})
     require("lspconfig").pyright.setup({})
     require("lspconfig").clangd.setup({})
+    -- require("lspconfig").sqlls.setup({})
     require("lspconfig").lua_ls.setup({
         on_init = function(client)
             local path = client.workspace_folders[1].name
