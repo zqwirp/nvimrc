@@ -154,7 +154,7 @@ require("lazy").setup({
     {
         "windwp/nvim-autopairs",
         lazy = true,
-        
+
         config = true,
 
         event = "InsertEnter",
@@ -184,6 +184,7 @@ require("lazy").setup({
         "prettier/vim-prettier",
         lazy = true,
 
+        ft = { "html", "css", "javascript" },
         cmd = "Prettier",
     },
 

@@ -21,7 +21,7 @@ M.opts = {
 
     -- MODULES
     highlight = {
-        enable = false,
+        enable = true,
     },
     incremental_selection = {
         enable = false,

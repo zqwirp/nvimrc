@@ -24,7 +24,7 @@ opt.wildmode = "full"
 
 -- COLOR/THEME
 opt.background = "dark"
-vim.cmd("colorscheme kanagawa-dragon")
+vim.cmd("colorscheme kanagawa-wave")
 opt.termguicolors = true
 
 -- SPACE/TAB/INDENT
