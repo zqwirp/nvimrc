@@ -15,6 +15,7 @@ opt.completeopt = "menu,menuone,noselect"
 opt.showcmd = true
 opt.showmode = true
 opt.showmatch = true
+opt.laststatus = 0
 
 -- WILDMENU
 opt.wildmenu = true
