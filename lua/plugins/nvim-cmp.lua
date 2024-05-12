@@ -15,6 +15,7 @@ local M = {
         "neovim/nvim-lspconfig",
     },
 
+    ft = { "php" },
     -- cmd = "CmpStatus",
     -- keys = "<leader>cmp",
 }

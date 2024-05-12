@@ -9,6 +9,9 @@ opt.number = false
 opt.numberwidth = 1
 -- opt.relativenumber = true
 
+opt.mouse = ""
+opt.mousescroll = "ver:0,hor:0"
+
 opt.backspace = "indent,eol,start"
 opt.completeopt = "menu,menuone,noselect"
 
@@ -56,3 +59,4 @@ opt.writebackup = false
 -- CURSOR
 opt.cursorline = true
 -- opt.cursorcolumn = true
+
