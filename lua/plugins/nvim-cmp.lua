@@ -119,6 +119,9 @@ M.config = function()
     require("lspconfig").gopls.setup {
         capabilities = capabilities
     }
+    require("lspconfig").golangci_lint_ls.setup {
+        capabilities = capabilities
+    }
     require("lspconfig").tsserver.setup({
         capabilities = capabilities
     })

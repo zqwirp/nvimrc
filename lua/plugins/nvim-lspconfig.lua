@@ -9,6 +9,7 @@ local M = {
 M.config = function()
     require("lspconfig").bashls.setup({})
     require("lspconfig").gopls.setup({})
+    require("lspconfig").golangci_lint_ls.setup({})
     require("lspconfig").tsserver.setup({})
     require("lspconfig").eslint.setup({})
     require("lspconfig").html.setup({})
